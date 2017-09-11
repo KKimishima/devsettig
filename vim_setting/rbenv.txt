@@ -1,0 +1,30 @@
+
+$ git clone https://github.com/sstephenson/rbenv.git ~/.rbenv
+$ git clone https://github.com/sstephenson/ruby-build.git ~/.rbenv/plugins/ruby-build
+
+$ echo 'export PATH="$HOME/.rbenv/bin:$PATH"' >> ~/.bash_profile
+$ echo 'eval "$(rbenv init -)"' >> ~/.bash_profile
+
+$ source ~/.bash_profile
+$ rbenv --version
+
+yum install gcc-c++
+
+$ rbenv install --list
+Available versions:
+      ・
+      ・
+  2.1.1
+  2.1.2
+  2.2.0-dev
+  jruby-1.5.6
+  jruby-1.6.3
+  jruby-1.6.4
+      ・
+
+      ・
+$ rbenv install 2.1.2
+
+$ rbenv global 1.9.3-p547
+$ rbenv version
+1.9.3-p547 (set by /home/user/.rbenv/version)

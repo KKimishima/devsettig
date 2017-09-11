@@ -1,0 +1,45 @@
+$ ssh-keygen
+Generating public/private rsa key pair.
+Enter file in which to save the key (/home/vagrant/.ssh/id_rsa): github_rsa    <----- 今回はgithub用のSSH鍵を作成しているので、それとわかる名前を付けています。
+Enter passphrase (empty for no passphrase): <----- 今回はパスワードはなしでOKのため、何も入力せずに「Enter」。
+Enter same passphrase again:     <----- 確認を求められますが、今回は設定していないので、何も入力せずに「Enter」。
+Your identification has been saved in github_rsa.
+Your public key has been saved in github_rsa.pub.
+The key fingerprint is:
+6f:09:a6:35:2d:34:e6:82:95:89:41:7d:a7:58:1b:92 vagrant@localhost.localdomain
+The key's randomart image is:
+
+$ mkdir -p ~/.ssh       <----- ホームディレクトリに.sshディレクトリを作成
+$ mv github_rsa* ~/.ssh     <----- .sshディレクトリに作成したキーペアを移動
+
+$ touch ~/.ssh/config
+$ vi ~/.ssh/config    <----- .ssh/configファイルに下記五行を追記
++ Host github
++     HostName github.com
++     Identityfile ~/.ssh/github_rsa
++     Port 22
++     User git  
+
+chmod 700 ~/.ssh/config 
+
+ssh-add -k ~/.ssh/xxxx
+
+git 2.7.5 のタブ補完スクリプトは、下記の位置にありました。
+
+/usr/share/doc/git-2.7.5/contrib/completion/git-completion.bash
+
+yumで2.13.5にアップデートしたら、contribディレクトリがなくなってました。。
+
+しかたないので、githubからgitレポジトリをクローンしてきました。
+
+$ cd
+$ git clone https://github.com/git/git.git
+$ cd git/
+$ git co v2.13.5
+$ vi ~/.bash_profile
+
+# git completion
+#. /usr/share/doc/git-2.7.5/contrib/completion/git-completion.bash
+. $HOME/git/contrib/completion/git-completion.bash
+
+$ . ~/.bash_profile

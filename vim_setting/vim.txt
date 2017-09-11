@@ -1,0 +1,15 @@
+sudo yum remove vim-enhanced
+
+sudo yum install lua-devel ncurses-devel
+
+$ su -
+※ sudoでも構いません
+
+# cd /usr/local/src/
+# git clone https://github.com/vim/vim.git
+# cd vim/
+# git pull
+# make distclean
+# ./configure --prefix=/usr/local --with-features=huge --enable-multibyte --enable-rubyinterp --enable-luainterp --enable-cscope --enable-fail-if-missing --with-ruby-command=/home/vagrant/.rbenv/shims/ruby
+# make
+# make install

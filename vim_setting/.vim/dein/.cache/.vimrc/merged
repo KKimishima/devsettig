@@ -1,0 +1,2 @@
+100
+['/home/vagrant/.vim/dein/repos/github.com/Shougo/dein.vim', 'Shougo/neocomplcache', 'Shougo/neocomplete.vim', 'Shougo/neosnippet', 'Shougo/neosnippet-snippets', 'Shougo/unite.vim', 'Shougo/vimshell', 'Yggdroot/indentLine', 'justmao945/vim-clang', 'kana/vim-submode', 'kannokanno/previm', 'plasticboy/vim-markdown', 'scrooloose/nerdtree', 'tpope/vim-fugitive', 'tyru/open-browser.vim', 'vim-jp/vim-cpp', 'vim-jp/vim-java', 'vim-scripts/VimRepress', 'vim-syntastic/syntastic']
